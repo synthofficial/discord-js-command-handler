@@ -7,6 +7,15 @@ const { Timestamp } = require("@sapphire/time-utilities");
 const timestamp = `[${cyan(bold(new Timestamp("YYYY-MM-DD HH:mm:ss")))}]:`;
 
 client.on("ready", async () => {  
-        console.log(`\n${timestamp} ${yellow(bold(underline(`Bot Stats`)))}\n${timestamp} ${white(bold(`Servers: ${red(bold(client.guilds.cache.size))}`))}\n${timestamp} ${white(bold(`Commands: ${red(bold(client.commands.size))}`))}\n${timestamp} ${white(bold(`Slash Commands: ${red(bold(client.slashCommands.size))}`))}\n${timestamp} ${white(bold(`Events: ${red(bold(client.events.size))}`))}\n${timestamp} ${white(bold(`Bot Name: ${greenBright(bold(`${client.user.username}`))}`))}`)
-        client.user.setActivity(`${client.guilds.cache.size} servers`, { type: ['WATCHING']})
+        console.clear();
+
+        if(mongoose.connection.readyState == 1){
+            console.log(`${timestamp} ${magenta(bold(`CONNECTION`))} ${white(bold(`MongoDB Connection: ${green(bold(`true`))}`))}`)
+        }else console.log(`${timestamp} ${magenta(bold(`CONNECTION`))} ${white(bold(`MongoDB Connection: ${red(bold(`false`))}`))}`)
+    
+        console.log(`${timestamp} ${blue(bold(`INFO`))} ${white(bold(`Commands: ${yellow(bold(client.commands.size))}`))}`)
+        console.log(`${timestamp} ${blue(bold(`INFO`))} ${white(bold(`Slash Commands: ${yellow(bold(client.slashCommands.size))}`))}`)
+        console.log(`${timestamp} ${blue(bold(`INFO`))} ${white(bold(`Bot Name: ${yellow(bold(client.user.username))}`))}`)
+        console.log(`${timestamp} ${blue(bold(`INFO`))} ${white(bold(`Servers: ${yellow(bold(client.guilds.cache.size))}`))}`)
+            client.user.setActivity(`${client.guilds.cache.size} servers`, { type: ['WATCHING']})
 });
