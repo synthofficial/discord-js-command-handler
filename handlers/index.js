@@ -2,7 +2,8 @@ const { glob } = require("glob");
 const { promisify } = require("util");
 const { Client, MessageActionRow, MessageButton } = require("discord.js");
 const mongoose = require("mongoose");
-const log = require('./logger')
+const log = require('../util/logger')
+const i18n = require('../util/i18n')
 
 let slashDisabled = false; //Only use this if you need to update a slash command.
 
@@ -69,7 +70,5 @@ module.exports = async (client) => {
     const { mongooseConnectionString } = require('../config.json')
     if (!mongooseConnectionString) return;
 
-    mongoose.connect(mongooseConnectionString).then(() => {
-        log.event(`Connected to MongoDB!`)
-    });
+    mongoose.connect(mongooseConnectionString);
 };

@@ -1,4 +1,4 @@
-const log  = require("../handlers/logger");
+const log  = require("../util/logger");
 const client = require("../index");
 const config = require("../config.json")
 

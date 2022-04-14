@@ -1,5 +1,6 @@
 {
-    "token": "TOKENHERE",
+    "token": "OTEzMjcxNDU0OTM2NzYwMzYw.YZ8EUg.3pkyxPO0xRSZDdZEJcFObXgGQzQ",
     "prefix": "+",
-    "mongooseConnectionString": "MONGODB_URLHERE"
+    "mongooseConnectionString": "mongodb+srv://synth:ggffdd11@cluster0.zr7kl.mongodb.net/ValorantSkinUnbox",
+    "LOCALE": "en"
 }

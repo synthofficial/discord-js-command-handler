@@ -1,0 +1,6 @@
+{
+	"console": {
+		"testLocale": "This is a log used by i18n()!",
+		"mongoConn": "console.mongoConn"
+	}
+}
